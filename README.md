@@ -1,13 +1,19 @@
-# Sample Hardhat Project
+# Challenge: Update Private Variables Using Assembly in Solidity
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+## Problem Description
 
-Try running some of the following tasks:
+You are provided with two Solidity contracts: `UintStorage` and `StrangeCalculator`. Your task is to modify the `StrangeCalculator` contract to update private variables in the `UintStorage` contract using Solidity's assembly language.
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+### Contract Descriptions
+
+#### `UintStorage`
+
+- `UintStorage` is a contract that stores private variables and a mapping.
+- It has a private variable `one` initialized to 1.
+- It contains a mapping `pointMap` that maps `uint256` keys to `Point` structs.
+- `setNewValues(uint256 first, Point calldata point)` is an empty function in which you need to update the private variables in `UintStorage`.
+
+#### `StrangeCalculator`
+
+- `StrangeCalculator` inherits from `UintStorage` and overrides the `setNewValues` function.
+- In the overridden function, you must update the private variables in `UintStorage` using Solidity assembly.
